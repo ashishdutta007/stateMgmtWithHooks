@@ -18,7 +18,7 @@ export const todoReducer = (state, action) => {
     case "TOGGLE_TODO":
       return state.map((todo) => {
         if (todo.id === action.payload) {
-          return { id: todo.id, task: todo.task, complete: !todo.complete };
+          return { ...todo, complete: !todo.complete };
         } else {
           return todo;
         }
